@@ -45,16 +45,6 @@ namespace Accounting.App.Transaction
 
         void Filter()
         {
-            //using (UnitOfWork db = new UnitOfWork())
-            //{
-            //    var result = db.AccontingRepository.Get(a => a.TypeID == TypeID);
-            //    dgReport.Rows.Clear();
-            //    foreach (var accounting in result)
-            //    {
-            //        string customerName = db.CustomerRepository.GetCustomerNameById(accounting.ID);
-            //        dgReport.Rows.Add(accounting.ID, customerName, accounting.Amount, accounting.DateTitle.toshamsi(), accounting.Description);
-            //    }
-            //}
             using (UnitOfWork db = new UnitOfWork())
             {
                 var result = db.AccontingRepository.Get(a => a.TypeID == TypeID);
@@ -73,20 +63,6 @@ namespace Accounting.App.Transaction
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            //if (dgReport.CurrentRow != null)
-            //{
-            //    int id = int.Parse(dgReport.CurrentRow.Cells[0].Value.ToString());
-            //    if (RtlMessageBox.Show("آیا از حذف مطمئتن هستید ؟", "هشدار", MessageBoxButtons.YesNo) ==
-            //        DialogResult.Yes)
-            //    {
-            //        using (UnitOfWork db = new UnitOfWork())
-            //        {
-            //            db.AccontingRepository.Delete(id);
-            //            db.Save();
-            //            Filter();
-            //        }
-            //    }
-            //}
             if (dgReport.CurrentRow != null)
             {
                 int id = int.Parse(dgReport.CurrentRow.Cells[0].Value.ToString());
@@ -105,16 +81,6 @@ namespace Accounting.App.Transaction
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            //if (dgReport.CurrentRow != null)
-            //{
-            //    int id = int.Parse(dgReport.CurrentRow.Cells[0].Value.ToString());
-            //    FrmCustomerTransaction frmNew = new FrmCustomerTransaction();
-            //    frmNew.AccountID = id;
-            //    if (frmNew.ShowDialog() == DialogResult.OK)
-            //    {
-            //        Filter();
-            //    }
-            //}
             if (dgReport.CurrentRow != null)
             {
                 int id = int.Parse(dgReport.CurrentRow.Cells[0].Value.ToString());

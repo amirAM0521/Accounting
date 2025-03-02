@@ -119,17 +119,6 @@ namespace Accounting.App
 
         private void btnEditCustomers_Click(object sender, EventArgs e)
         {
-            //if (dgCustomers.CurrentRow != null)
-            //{
-
-            //    int Id = int.Parse(dgCustomers.CurrentRow.Cells[0].Value.ToString());
-            //    FrmCustomerAddOrEdit frmAddOrEdit = new FrmCustomerAddOrEdit();
-            //    frmAddOrEdit.Id = Id;
-            //    if (frmAddOrEdit.ShowDialog() == DialogResult.OK)
-            //    {
-            //        BaidGrid();
-            //    }
-            //}
             if (dgCustomers.CurrentRow != null)
             {
                 int customerId = int.Parse(dgCustomers.CurrentRow.Cells[0].Value.ToString());

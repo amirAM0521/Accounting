@@ -24,28 +24,6 @@ namespace Accounting.App
 
         private void FrmCustomerTransaction_Load(object sender, EventArgs e)
         {
-            //db = new UnitOfWork();
-            //dgCustomerName.AutoGenerateColumns = false;
-            //dgCustomerName.DataSource = db.CustomerRepository.GetNameCustomer();
-            //if (AccountID != 0)
-            //{
-            //    var account = db.AccontingRepository.GetById(AccountID);
-            //    txtAmount.Text = account.Amount.ToString();
-            //    txtDescription.Text = account.Description;
-            //    txtName.Text = db.CustomerRepository.GetCustomerNameById(account.CustomerID);
-            //    if (account.TypeID == 1)
-            //    {
-            //        rbRecive.Checked = true;
-            //    }
-            //    else
-            //    {
-            //        rbPey.Checked = true;
-            //    }
-
-            //    this.Text = "ویرایش";
-            //    btnSave.Text = "ویرایش";
-            //    db.Dispose();
-            //}
             db = new UnitOfWork();
             dgCustomerName.AutoGenerateColumns = false;
             dgCustomerName.DataSource = db.CustomerRepository.GetNameCustomer();
