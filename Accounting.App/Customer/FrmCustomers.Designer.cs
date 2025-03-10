@@ -30,6 +30,10 @@ namespace Accounting.App
         private void InitializeComponent()
         {
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.btnAddCustomers = new System.Windows.Forms.ToolStripButton();
+            this.btnEditCustomers = new System.Windows.Forms.ToolStripButton();
+            this.btnDeleteCustomers = new System.Windows.Forms.ToolStripButton();
+            this.btnRefreshCustomers = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.txtbox = new System.Windows.Forms.ToolStripTextBox();
             this.dgCustomers = new System.Windows.Forms.DataGridView();
@@ -37,10 +41,6 @@ namespace Accounting.App
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnAddCustomers = new System.Windows.Forms.ToolStripButton();
-            this.btnEditCustomers = new System.Windows.Forms.ToolStripButton();
-            this.btnDeleteCustomers = new System.Windows.Forms.ToolStripButton();
-            this.btnRefreshCustomers = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgCustomers)).BeginInit();
             this.SuspendLayout();
@@ -60,73 +60,6 @@ namespace Accounting.App
             this.toolStrip1.Size = new System.Drawing.Size(582, 67);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
-            // 
-            // toolStripLabel1
-            // 
-            this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(56, 64);
-            this.toolStripLabel1.Text = "جستجو:";
-            // 
-            // txtbox
-            // 
-            this.txtbox.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtbox.Name = "txtbox";
-            this.txtbox.Size = new System.Drawing.Size(115, 67);
-            this.txtbox.Click += new System.EventHandler(this.txtbox_Click);
-            this.txtbox.TextChanged += new System.EventHandler(this.txtbox_TextChanged);
-            // 
-            // dgCustomers
-            // 
-            this.dgCustomers.AllowUserToAddRows = false;
-            this.dgCustomers.AllowUserToDeleteRows = false;
-            this.dgCustomers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgCustomers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgCustomers.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4});
-            this.dgCustomers.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgCustomers.Location = new System.Drawing.Point(0, 67);
-            this.dgCustomers.Name = "dgCustomers";
-            this.dgCustomers.ReadOnly = true;
-            this.dgCustomers.RowHeadersWidth = 51;
-            this.dgCustomers.RowTemplate.Height = 24;
-            this.dgCustomers.Size = new System.Drawing.Size(582, 286);
-            this.dgCustomers.TabIndex = 1;
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "ID";
-            this.Column1.HeaderText = "ID";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Visible = false;
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "FullName";
-            this.Column2.HeaderText = "نام";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "Mobile";
-            this.Column3.HeaderText = "موبایل";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            this.Column4.DataPropertyName = "Email";
-            this.Column4.HeaderText = "ایمیل";
-            this.Column4.MinimumWidth = 6;
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
             // 
             // btnAddCustomers
             // 
@@ -171,6 +104,72 @@ namespace Accounting.App
             this.btnRefreshCustomers.Text = "بروزرسانی";
             this.btnRefreshCustomers.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnRefreshCustomers.Click += new System.EventHandler(this.btnRefreshCustomers_Click);
+            // 
+            // toolStripLabel1
+            // 
+            this.toolStripLabel1.Name = "toolStripLabel1";
+            this.toolStripLabel1.Size = new System.Drawing.Size(56, 64);
+            this.toolStripLabel1.Text = "جستجو:";
+            // 
+            // txtbox
+            // 
+            this.txtbox.Name = "txtbox";
+            this.txtbox.Size = new System.Drawing.Size(115, 67);
+            this.txtbox.Click += new System.EventHandler(this.txtbox_Click);
+            this.txtbox.TextChanged += new System.EventHandler(this.txtbox_TextChanged);
+            // 
+            // dgCustomers
+            // 
+            this.dgCustomers.AllowUserToAddRows = false;
+            this.dgCustomers.AllowUserToDeleteRows = false;
+            this.dgCustomers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgCustomers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgCustomers.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4});
+            this.dgCustomers.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgCustomers.Location = new System.Drawing.Point(0, 67);
+            this.dgCustomers.Name = "dgCustomers";
+            this.dgCustomers.ReadOnly = true;
+            this.dgCustomers.RowHeadersWidth = 51;
+            this.dgCustomers.RowTemplate.Height = 24;
+            this.dgCustomers.Size = new System.Drawing.Size(582, 286);
+            this.dgCustomers.TabIndex = 1;
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "CustomerID";
+            this.Column1.HeaderText = "ID";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Visible = false;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "FullName";
+            this.Column2.HeaderText = "نام";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "Mobile";
+            this.Column3.HeaderText = "موبایل";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "Email";
+            this.Column4.HeaderText = "ایمیل";
+            this.Column4.MinimumWidth = 6;
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
             // 
             // FrmCustomers
             // 

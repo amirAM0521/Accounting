@@ -51,8 +51,8 @@ namespace Accounting.App.Transaction
                 dgReport.Rows.Clear();
                 foreach (var accounting in result)
                 {
-                    string customerName = db.CustomerRepository.GetCustomerNameById(accounting.ID);
-                    dgReport.Rows.Add(accounting.ID, customerName, accounting.Amount, accounting.DateTitle.toshamsi(), accounting.Description);
+                    string customerName = db.CustomerRepository.GetCustomerNameById(accounting.AccountingID);
+                    dgReport.Rows.Add(accounting.AccountingID, customerName, accounting.Amount, accounting.DateTitle.toshamsi(), accounting.Description);
                 }
             }
         }

@@ -10,10 +10,10 @@ namespace Accounting.DataLayer.Servises
 {
     public class GenericRepository<TEntity> where TEntity : class
     {
-        private Accounting_DBEntities _db;
+        private AccountingDBEntities _db;
         private DbSet<TEntity> _dbSet;
 
-        public GenericRepository(Accounting_DBEntities db)
+        public GenericRepository(AccountingDBEntities db)
         {
             _db = db;
             _dbSet = _db.Set<TEntity>();
@@ -60,19 +60,11 @@ namespace Accounting.DataLayer.Servises
 
         public virtual IEnumerable<TEntity> Get(Expression<Func<TEntity, bool>> where = null)
         {
-            //IQueryable<TEntity> query = _dbSet;
-            //if (where != null)
-            //{
-            //    query = query.Where(where);
-            //}
-            //return query.ToList();
             IQueryable<TEntity> query = _dbSet;
-
             if (where != null)
             {
                 query = query.Where(where);
             }
-
             return query.ToList();
         }
     }

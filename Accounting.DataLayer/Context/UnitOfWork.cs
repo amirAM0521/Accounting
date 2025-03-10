@@ -11,7 +11,7 @@ namespace Accounting.DataLayer.Context
 {
     public class UnitOfWork : IDisposable
     {
-        Accounting_DBEntities db = new Accounting_DBEntities();
+        AccountingDBEntities db = new AccountingDBEntities();
 
         private ICustomerRepository _customerRepository;
 
@@ -19,12 +19,6 @@ namespace Accounting.DataLayer.Context
         {
             get
             {
-                //if (_customerRepository == null)
-                //{
-                //    _customerRepository = new CustomerRepository(db);
-                //}
-
-                //return _customerRepository;
                 if (_customerRepository == null)
                 {
                     _customerRepository = new CustomerRepository(db);
@@ -34,37 +28,20 @@ namespace Accounting.DataLayer.Context
             }
         }
 
-        private GenericRepository<Acconting> _accontingRepository;
+        private GenericRepository<Accounting> _accontingRepository;
 
-        public GenericRepository<Acconting> AccontingRepository
+        public GenericRepository<Accounting> AccontingRepository
         {
-            //get
-            //{
-            //    if (_accontingRepository == null)
-            //    {
-            //        _accontingRepository = new GenericRepository<Acconting>(db);
-            //    }
-            //    return _accontingRepository;
-            //}
             get
             {
                 if (_accontingRepository == null)
                 {
-                    _accontingRepository = new GenericRepository<Acconting>(db);
+                    _accontingRepository = new GenericRepository<Accounting>(db);
                 }
 
                 return _accontingRepository;
             }
         }
-        //public void Save()
-        //{
-        //    db.SaveChanges();
-        //}
-
-        //public void Dispose()
-        //{
-        //    db.Dispose();
-        //}
         public void Save()
         {
             db.SaveChanges();

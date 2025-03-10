@@ -20,11 +20,6 @@ namespace Accounting.App
 
         void BaidGrid()
         {
-            //using (UnitOfWork db = new UnitOfWork()) 
-            //{
-            //    dgCustomers.AutoGenerateColumns = false;
-            //    dgCustomers.DataSource = db.CustomerRepository.GetAllCustomers();
-            //}
             using (UnitOfWork db = new UnitOfWork())
             {
                 dgCustomers.AutoGenerateColumns = false;
@@ -49,10 +44,6 @@ namespace Accounting.App
 
         private void txtbox_TextChanged(object sender, EventArgs e)
         {
-            //using (UnitOfWork db = new UnitOfWork())
-            //{
-            //    dgCustomers.DataSource = db.CustomerRepository.GetCustomersByFilter(txtbox.Text);
-            //}
             using (UnitOfWork db = new UnitOfWork())
             {
                 dgCustomers.DataSource = db.CustomerRepository.GetCustomersByFilter(txtbox.Text);
@@ -61,25 +52,6 @@ namespace Accounting.App
 
         private void btnDeleteCustomers_Click(object sender, EventArgs e)
         {
-            //if (dgCustomers.CurrentRow != null)
-            //{
-            //    using (UnitOfWork db = new UnitOfWork())
-            //    {
-            //        string name = dgCustomers.CurrentRow.Cells[1].Value.ToString();
-            //        if (RtlMessageBox.Show($"آیا از حذف {name} مطمئن هستید ؟", "توجه", MessageBoxButtons.YesNo,
-            //                MessageBoxIcon.Warning) == DialogResult.Yes)
-            //        {
-            //            int ID = int.Parse(dgCustomers.CurrentRow.Cells[0].Value.ToString());
-            //            db.CustomerRepository.DeleteCustomer(ID);
-            //            db.Save();
-            //            BaidGrid();
-            //        }
-            //    }
-            //}
-            //else
-            //{
-            //    RtlMessageBox.Show("لطفا شخصی را انتخاب کنید");
-            //}
             if (dgCustomers.CurrentRow != null)
             {
                 using (UnitOfWork db = new UnitOfWork())
@@ -103,12 +75,6 @@ namespace Accounting.App
 
         private void btnAddCustomers_Click(object sender, EventArgs e)
         {
-            //FrmCustomerAddOrEdit frmAdd = new FrmCustomerAddOrEdit();
-
-            //if (frmAdd.ShowDialog() == DialogResult.OK)
-            //{
-            //    BaidGrid();
-            //}
             FrmCustomerAddOrEdit frmAdd = new FrmCustomerAddOrEdit();
             if (frmAdd.ShowDialog() == DialogResult.OK)
             {
