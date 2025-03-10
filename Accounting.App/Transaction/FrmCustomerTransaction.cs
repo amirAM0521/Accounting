@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Accounting.DataLayer.Context;
 using ValidationComponents;
-using Acconting = Accounting.DataLayer.Acconting;
+using Acconting = Accounting.DataLayer.Accounting;
 
 namespace Accounting.App
 {
@@ -32,7 +32,7 @@ namespace Accounting.App
                 var account = db.AccontingRepository.GetById(AccountID);
                 txtAmount.Text = account.Amount.ToString();
                 txtDescription.Text = account.Description;
-                txtName.Text = db.CustomerRepository.GetCustomerNameById(account.ID);
+                txtName.Text = db.CustomerRepository.GetCustomerNameById(account.AccountingID);
                 if (account.TypeID == 1)
                 {
                     rbRecive.Checked = true;
@@ -67,10 +67,10 @@ namespace Accounting.App
                 if (rbPey.Checked || rbRecive.Checked)
                 {
                     db = new UnitOfWork();
-                    DataLayer.Acconting accounting = new DataLayer.Acconting()
+                    DataLayer.Accounting accounting = new DataLayer.Accounting()
                     {
                         Amount = int.Parse(txtAmount.Value.ToString()),
-                        //ID = db.CustomerRepository.GetCustomerIdByName(txtName.Text),
+                        AccountingID = db.CustomerRepository.GetCustomerIdByName(txtName.Text),
 
                         TypeID = (rbRecive.Checked) ? 1 : 2,
                         DateTitle = DateTime.Now,
@@ -84,7 +84,7 @@ namespace Accounting.App
                     }
                     else
                     {
-                        accounting.ID = AccountID;
+                        accounting.AccountingID = AccountID;
                         db.AccontingRepository.Update(accounting);
 
                     }
