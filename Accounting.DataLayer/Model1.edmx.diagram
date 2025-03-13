@@ -4,7 +4,12 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
+      <Diagram DiagramId="f20ef4589eb6465baa86260898accbfd" Name="Diagram1">
+        <EntityTypeShape EntityType="AccountingDBModel.Accounting" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="AccountingDBModel.AccountingType" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="AccountingDBModel.Customers" Width="1.5" PointX="0.75" PointY="5" IsExpanded="true" />
+        <AssociationConnector Association="AccountingDBModel.FK_Accounting_AccountingType1" ManuallyRouted="false" />
+        <AssociationConnector Association="AccountingDBModel.FK_Accounting_Customers1" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
