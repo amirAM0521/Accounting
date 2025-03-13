@@ -14,7 +14,7 @@ namespace Accounting.DataLayer
     
     public partial class Accounting
     {
-        public int AccountingID { get; set; }
+        public int ID { get; set; }
         public int CustomerID { get; set; }
         public int TypeID { get; set; }
         public int Amount { get; set; }
