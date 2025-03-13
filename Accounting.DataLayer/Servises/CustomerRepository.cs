@@ -11,9 +11,9 @@ namespace Accounting.DataLayer.Services
 {
     public class CustomerRepository : ICustomerRepository
     {
-        private AccountingDBEntities db;
+        private AccountingDBEntities1 db;
 
-        public CustomerRepository(AccountingDBEntities contxt)
+        public CustomerRepository(AccountingDBEntities1 contxt)
         {
             db = contxt;
         }
@@ -109,15 +109,6 @@ namespace Accounting.DataLayer.Services
 
         public string GetCustomerNameById(int customerId)
         {
-            //var customer = db.Customers.Find(customerId);
-            //if (customer != null)
-            //{
-            //    return customer.FullName;
-            //}
-            //else
-            //{
-            //    return "Customer not found"; // یا هر رفتار دیگری که مناسب است
-            //}
             return db.Customers.Find(customerId).FullName;
         }
     }

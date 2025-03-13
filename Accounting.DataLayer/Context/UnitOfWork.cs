@@ -11,7 +11,7 @@ namespace Accounting.DataLayer.Context
 {
     public class UnitOfWork : IDisposable
     {
-        AccountingDBEntities db = new AccountingDBEntities();
+        AccountingDBEntities1 db = new AccountingDBEntities1();
 
         private ICustomerRepository _customerRepository;
 
